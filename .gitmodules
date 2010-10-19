@@ -37,3 +37,12 @@
 [submodule "vim/bundle/vim-makegreen"]
 	path = vim/bundle/vim-makegreen
 	url = http://github.com/reinh/vim-makegreen.git
+[submodule "vim/bundle/vim-tcomment"]
+	path = vim/bundle/vim-tcomment
+	url = http://github.com/tomtom/tcomment_vim.git
+[submodule "vim/bundle/ack"]
+	path = vim/bundle/ack
+	url = http://github.com/mileszs/ack.vim.git
+[submodule "vim/bundle/vim-rooter"]
+	path = vim/bundle/vim-rooter
+	url = http://github.com/airblade/vim-rooter.git
