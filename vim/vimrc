@@ -42,6 +42,9 @@ set nobackup                      " Don't make a backup before overwriting a fil
 set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+set list                          " show trailing whiteshace and tabs
+
 " UNCOMMENT TO USE
 set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
@@ -88,6 +91,38 @@ autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 " Thorfile, Rakefile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
 
+" Ruby Debugger Snippet (via https://github.com/hashrocket/dotmatrix/blob/master/.vim/plugin/hashrocket.vim)
+iabbrev rdebug    require 'ruby-debug'; Debugger.start; Debugger.settings[:autoeval] = 1; Debugger.settings[:autolist] = 1; debugger
+
+command! -bar -range=% Trim :<line1>,<line2>s/\s\+$//e
+
+command! -bar -nargs=* -bang -complete=file Rename :
+      \ let v:errmsg = ""|
+      \ saveas<bang> <args>|
+      \ if v:errmsg == ""|
+      \   call delete(expand("#"))|
+      \ endif
+
+command! -bar -nargs=0 -bang -complete=file Remove :
+      \ let v:errmsg = ''|
+      \ let s:removable = expand('%:p')|
+      \ bdelete<bang>|
+      \ if v:errmsg == ''|
+      \   call delete(s:removable)|
+      \ endif|
+      \ unlet s:removable
+
 " md, markdown, and mk are markdown and define buffer-local preview
 " au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+
+autocmd User Rails nnoremap <buffer> <D-r> :<C-U>Rake<CR>
+autocmd User Rails nnoremap <buffer> <D-R> :<C-U>.Rake<CR>
+autocmd User Rails Rnavcommand uploader app/uploaders -suffix=_uploader.rb -default=model()
+autocmd User Rails Rnavcommand steps features/step_definitions -suffix=_steps.rb -default=web
+autocmd User Rails Rnavcommand blueprint spec/blueprints -suffix=_blueprint.rb -default=model()
+autocmd User Rails Rnavcommand factory spec/factories -suffix=_factory.rb -default=model()
+autocmd User Rails Rnavcommand fabricator spec/fabricators -suffix=_fabricator.rb -default=model()
+autocmd User Rails Rnavcommand feature features -suffix=.feature -default=cucumber
+autocmd User Rails Rnavcommand support spec/support features/support -default=env
+autocmd User Fugitive command! -bang -bar -buffer -nargs=* Gpr :Git<bang> pull --rebase <args>
 
