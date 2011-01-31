@@ -120,6 +120,15 @@ git_status_prompt() {
     GIT_PROMPT=""
   fi
 }
+# HACK: Need to figure out why echo does not respect my escapes :(
+git_minutes_prompt() {
+  local g="$(__gitdir)"
+  if [ -n "$g" ]; then
+    local MINUTES_SINCE_LAST_COMMIT="$(minutes_since_last_commit)m"
+    local GIT_PROMPT=`__git_ps1 "(${MINUTES_SINCE_LAST_COMMIT}|%s)"`
+    echo $GIT_PROMPT
+  fi
+}
 
 # git bash shell script
 source ~/.git-completion.bash
@@ -127,8 +136,11 @@ source ~/.git-completion.bash
 [ -z "$PS1" ] || stty -ixon
 
 # [ -z "$PS1" ] || PS1="\h:\W\$(git_status_prompt) \u\$ "
-[ -z "$PS1" ] || PS1="${GREEN}\h:\W\$(__git_ps1) \u${NORM}\$ "
+[ -z "$PS1" ] || PS1="${GREEN}\h:\W${RED}\$(git_minutes_prompt) ${GREEN}\u${NORM}\$ "
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+# include a local customization
+[ ! -f "$HOME/.bashrc.local" ] || . "$HOME/.bashrc.local"
 
