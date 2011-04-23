@@ -32,7 +32,6 @@ B_BLUE="\[\033[44m\]"
 B_CYAN="\[\033[46m\]"
 B_LGREY="\[\033[47m\]"
 
-GIT_PROMPT=""
 ## Custom Options
 
 # Update PATH with additional user-created directories
@@ -69,20 +68,22 @@ shopt -s histappend
 RI="--format ansi -T"
 
 # RUBYOPT (Ruby Execution Options)
-RUBYOPT="rubygems"
+# RUBYOPT="rubygems"
 
 # Brewbygems!
-GEM_HOME="$(brew --prefix)/Cellar/gems/1.9"
-GEM_PATH="$(brew --prefix)/Cellar/gems/1.9"
+# GEM_HOME="$(brew --prefix)/Cellar/gems/1.9"
+# GEM_PATH="$(brew --prefix)/Cellar/gems/1.9"
 # Bundles
-BUNDLE_PATH=$GEM_HOME
+# BUNDLE_PATH=$GEM_HOME
+
 # Cucumber
 CUCUMBER_FORMAT="pretty"
 
 # Export all options (in order of appearence)
 export PATH VISUAL EDITOR CLICOLOR LSCOLORS LESS GREP_OPTIONS
 export HISTCONTROL HISTSIZE
-export RI RUBYOPT GEM_HOME GEM_PATH BUNDLE_PATH CUCUMBER_FORMAT
+# export RI RUBYOPT GEM_HOME GEM_PATH BUNDLE_PATH CUCUMBER_FORMAT
+export RI RUBYOPT CUCUMBER_FORMAT
 
 # Aliases
 alias ll='ls -la'
@@ -136,7 +137,8 @@ source ~/.git-completion.bash
 [ -z "$PS1" ] || stty -ixon
 
 # [ -z "$PS1" ] || PS1="\h:\W\$(git_status_prompt) \u\$ "
-[ -z "$PS1" ] || PS1="${GREEN}\h:\W${RED}\$(git_minutes_prompt) ${GREEN}\u${NORM}\$ "
+# [ -z "$PS1" ] || PS1="${GREEN}\h:\W${RED}\$(git_minutes_prompt) ${GREEN}\u${NORM}\$ "
+[ -z "$PS1" ] || PS1="${GREEN}\h:\W${RED}\$(__git_ps1 '(%s)') ${GREEN}\u${NORM}\$ "
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
