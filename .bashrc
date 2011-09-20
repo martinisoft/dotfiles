@@ -76,9 +76,6 @@ RI="--format ansi -T"
 # Bundles
 # BUNDLE_PATH=$GEM_HOME
 
-# Cucumber
-CUCUMBER_FORMAT="pretty"
-
 # Export all options (in order of appearence)
 export PATH VISUAL EDITOR CLICOLOR LSCOLORS LESS GREP_OPTIONS
 export HISTCONTROL HISTSIZE
@@ -90,8 +87,9 @@ alias ll='ls -la'
 alias gpush='git push'
 alias gpull='git pull'
 alias gpr='git pull --rebase'
-# Praise Veezus!
-alias testify="watchr ~/.watchr.rb"
+
+alias vanguard="guard -c -n false"
+alias vangaurd="vanguard"
 
 # Custom git status prompt
 export GIT_PS1_SHOWDIRTYSTATE=true
@@ -138,11 +136,11 @@ source ~/.git-completion.bash
 
 # [ -z "$PS1" ] || PS1="\h:\W\$(git_status_prompt) \u\$ "
 # [ -z "$PS1" ] || PS1="${GREEN}\h:\W${RED}\$(git_minutes_prompt) ${GREEN}\u${NORM}\$ "
-[ -z "$PS1" ] || PS1="${GREEN}\h:\W${RED}\$(__git_ps1 '(%s)') ${GREEN}\u${NORM}\$ "
-
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[ -z "$PS1" ] || PS1="${GREEN}\h${LGRAY}:${LBLUE}\W${RED}\$(__git_ps1 '(%s)') ${GREEN}\u${NORM}\$ "
 
 # include a local customization
 [ ! -f "$HOME/.bashrc.local" ] || . "$HOME/.bashrc.local"
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
