@@ -3,10 +3,16 @@ fpath=(
   $fpath
   ~/.rvm/scripts/zsh/Completion
   ~/.zsh/functions
+  ~/.zsh/plugins
 )
 
+# source the plugins
+for plugin in ~/.zsh/plugins/*.zsh; do
+  source $plugin
+done
+
 # set autocomplete
-autoload -U compinit; compinit
+autoload -U compinit; compinit -i
 
 # history
 HISTFILE=~/.zsh_history
