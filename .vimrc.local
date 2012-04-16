@@ -34,3 +34,8 @@ set expandtab
 
 " Railscasts theme
 colorscheme railscasts
+
+" Custom Rails.vim commands
+autocmd User Rails Rnavcommand turnip spec/features -suffix=.feature -default=cucumber
+autocmd User Rails Rnavcommand turnipsteps spec/features -suffix=_steps.rb -default=web
+autocmd User Rails Rnavcommand factory spec/factories -default=model()
