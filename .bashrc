@@ -79,9 +79,6 @@ alias gpush='git push'
 alias gpull='git pull'
 alias gpr='git pull --rebase'
 
-alias vanguard="guard -c -n false"
-alias vangaurd="vanguard"
-
 # Custom git status prompt
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
