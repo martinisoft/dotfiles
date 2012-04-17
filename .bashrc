@@ -93,9 +93,5 @@ source ~/.git-completion.bash
 # include a local customization
 [ ! -f "$HOME/.bashrc.local" ] || . "$HOME/.bashrc.local"
 
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
 # RVM Autocomplete
 [[ -r "$HOME/.rvm/scripts/completion" ]] && . "$HOME/.rvm/scripts/completion"
-
