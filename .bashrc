@@ -82,48 +82,12 @@ alias gpr='git pull --rebase'
 # Custom git status prompt
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
-function minutes_since_last_commit {
-  now=`date +%s`
-  last_commit=`git log --pretty=format:'%at' -1`
-  seconds_since_last_commit=$((now-last_commit))
-  minutes_since_last_commit=$((seconds_since_last_commit/60))
-  echo $minutes_since_last_commit
-}
-git_status_prompt() {
-  local g="$(__gitdir)"
-  if [ -n "$g" ]; then
-    local MINUTES_SINCE_LAST_COMMIT=`minutes_since_last_commit`
-    if [ "$MINUTES_SINCE_LAST_COMMIT" -gt 30 ]; then
-      local COLOR=${RED}
-    elif [ "$MINUTES_SINCE_LAST_COMMIT" -gt 10 ]; then
-      local COLOR=${YELLOW}
-    else
-      local COLOR=${GREEN}
-    fi
-    local SINCE_LAST_COMMIT="${COLOR}$(minutes_since_last_commit)m${NORM}"
-    local GIT_PROMPT="(${SINCE_LAST_COMMIT}|${LRED}$(__git_ps1)${GREEN})"
-    echo "$GIT_PROMPT"
-  else
-    GIT_PROMPT=""
-  fi
-}
-# HACK: Need to figure out why echo does not respect my escapes :(
-git_minutes_prompt() {
-  local g="$(__gitdir)"
-  if [ -n "$g" ]; then
-    local MINUTES_SINCE_LAST_COMMIT="$(minutes_since_last_commit)m"
-    local GIT_PROMPT=`__git_ps1 "(${MINUTES_SINCE_LAST_COMMIT}|%s)"`
-    echo $GIT_PROMPT
-  fi
-}
 
 # git bash shell script
 source ~/.git-completion.bash
 
 [ -z "$PS1" ] || stty -ixon
 
-# [ -z "$PS1" ] || PS1="\h:\W\$(git_status_prompt) \u\$ "
-# [ -z "$PS1" ] || PS1="${GREEN}\h:\W${RED}\$(git_minutes_prompt) ${GREEN}\u${NORM}\$ "
 [ -z "$PS1" ] || PS1="${GREEN}\h${LGRAY}:${LBLUE}\W${RED}\$(__git_ps1 '(%s)') ${GREEN}\u${NORM}\$ "
 
 # include a local customization
