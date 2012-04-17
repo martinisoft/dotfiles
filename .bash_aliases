@@ -26,8 +26,17 @@ alias tmux='tmux -2'
 # Misc
 alias vi='vim'
 
-# Color
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+# Platform Specific Options
+# OSX / BSD
+uname=`uname`
+if [[ $uname = 'Linux' ]]; then
+  alias ls='ls --color=auto'
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
+elif [[ $uname = 'FreeBSD' || $uname = 'Darwin' ]]; then
+  # TODO: Move back to bashrc file
+  CLICOLOR=1
+  # Set dircolor options
+  LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
+fi
