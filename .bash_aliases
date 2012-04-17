@@ -13,9 +13,19 @@ alias grc='git rebase --continue'
 alias gra='git rebase --abort'
 alias reset-authors='git commit --amend --reset-author -C HEAD'
 
-# Navigation
-alias ll='ls -la'
-alias l='ls -l'
+# Directory listing
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Tmux
+alias tmux='tmux -2'
 
 # Misc
 alias vi='vim'
+
+# Color
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
