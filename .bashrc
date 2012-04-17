@@ -67,15 +67,6 @@ shopt -s histappend
 # RI Formatting
 RI="--format ansi -T"
 
-# RUBYOPT (Ruby Execution Options)
-# RUBYOPT="rubygems"
-
-# Brewbygems!
-# GEM_HOME="$(brew --prefix)/Cellar/gems/1.9"
-# GEM_PATH="$(brew --prefix)/Cellar/gems/1.9"
-# Bundles
-# BUNDLE_PATH=$GEM_HOME
-
 # Export all options (in order of appearence)
 export PATH VISUAL EDITOR CLICOLOR LSCOLORS LESS GREP_OPTIONS
 export HISTCONTROL HISTSIZE
