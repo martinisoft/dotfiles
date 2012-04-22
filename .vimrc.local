@@ -5,9 +5,6 @@
 " Highlight matches.
 set hlsearch
 
-" Handle multiple buffers better.
-set hidden
-
 " But case-sensitive if expression contains a capital letter.
 set smartcase
 
@@ -16,24 +13,11 @@ set number
 " Show cursor position.
 set ruler
 
-" Set Vertical Splits to the Right
-set splitright
-" Set Horizontal Splits below
-set splitbelow
-
-" Set the terminal's title
+" Set the terminal's title.
 set title
-
-" Enhanced command line completion.
-" Complete like a shell
-set wildmenu
-set wildmode=list:longest
 
 " Turn on line wrapping.
 set wrap
-
-" No beeping.
-set visualbell
 
 " Enable 256 colors
 set t_Co=256
