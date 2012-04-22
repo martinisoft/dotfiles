@@ -26,6 +26,9 @@ set t_Co=256
 set nobackup
 set nowritebackup
 
+" Persistent undo files should be elsewhere
+set undodir=$TEMP
+
 " Set 2 space soft tabs, expand any hard tabs
 set tabstop=2
 set shiftwidth=2
