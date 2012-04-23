@@ -56,7 +56,7 @@ setopt prompt_subst
 autoload -U colors; colors
 
 # prompt
-PROMPT=$'%F{blue}%n@%m %c${vcs_info_msg_0_}%F{blue} %(?/%F{blue}/%F{red})%% %{$reset_color%}'
+PROMPT=$'%F{blue}%n@%m %c${vcs_info_msg_0_}%F{blue} %(?/%F{blue}/%F{red})%{$reset_color%}%# '
 
 # show non-success exit code in right prompt
 RPROMPT=$'%(?..{%{$fg[red]%}%?%{$reset_color%}})'
