@@ -1,3 +1,9 @@
+# HACK: Force 256 color terminal
+uname=`uname`
+if [[ $uname = 'Linux' ]]; then
+  export TERM="xterm-256color"
+fi
+
 # set extra zshell paths
 fpath=(
   $fpath
