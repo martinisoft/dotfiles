@@ -34,7 +34,7 @@ export PSQL_EDITOR='vim -c"set syntax=sql"'
 
 # vcs
 autoload -Uz vcs_info
- 
+
 zstyle ':vcs_info:*' stagedstr '%F{green}●'
 zstyle ':vcs_info:*' unstagedstr '%F{yellow}●'
 zstyle ':vcs_info:*' check-for-changes true
