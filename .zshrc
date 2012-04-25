@@ -32,9 +32,9 @@ setopt INC_APPEND_HISTORY
 (( ${+EDITOR}  )) || export EDITOR='vim'
 export PSQL_EDITOR='vim -c"set syntax=sql"'
 
-# vcs
+# Credit for this awesome git prompt goes to:
+# http://briancarper.net/blog/570/git-info-in-your-zsh-prompt
 autoload -Uz vcs_info
-
 zstyle ':vcs_info:*' stagedstr '%F{green}●'
 zstyle ':vcs_info:*' unstagedstr '%F{yellow}●'
 zstyle ':vcs_info:*' check-for-changes true
