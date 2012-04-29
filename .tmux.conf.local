@@ -6,9 +6,6 @@ set -g status-fg white
 set-window-option -g window-status-current-fg colour166
 set-window-option -g window-status-current-bg colour236
 
-# Alerted window in status bar.
-set-window-option -g window-status-alert-fg red
-
 # Set right side status bar
 set -g status-right '#[fg=colour208][%a %R] Load:#(uptime | cut -d "," -f 4 | cut -d ":" -f 2)'
 
