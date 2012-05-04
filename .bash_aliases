@@ -35,8 +35,13 @@ if [[ $uname = 'Linux' ]]; then
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
 elif [[ $uname = 'FreeBSD' || $uname = 'Darwin' ]]; then
+  VISUAL=vim
+  EDITOR="$VISUAL"
+  LESS="FRX"
   # TODO: Move back to bashrc file
   CLICOLOR=1
   # Set dircolor options
   LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
+  PSQL_EDITOR='vim -c"setf sql"'
+  export VISUAL EDITOR LESS PSQL_EDITOR CLICOLOR LSCOLORS
 fi
