@@ -9,11 +9,12 @@ alias gdc='git diff --cached'
 alias glod='git log --oneline --decorate'
 alias gp='git push'
 alias gpr='git pull --rebase'
-alias gst='git status'
+alias gst='git status -sb'
 alias gr='git rebase'
 alias grc='git rebase --continue'
 alias gra='git rebase --abort'
 alias reset-authors='git commit --amend --reset-author -C HEAD'
+alias git-count='git shortlog -sn'
 
 # Hitch Gem
 alias unhitch='hitch -u'
