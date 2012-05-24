@@ -49,4 +49,9 @@ elif [[ $uname = 'FreeBSD' || $uname = 'Darwin' ]]; then
   LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
   PSQL_EDITOR='vim -c"setf sql"'
   export VISUAL EDITOR LESS PSQL_EDITOR CLICOLOR LSCOLORS
+  # Setup a nicer VIM, preferring ~/Applications over /Applications
+  # MacVIM compiles VIM with all the options, its nicer
+  bettervim="/Applications/MacVim.app/Contents/MacOS/Vim"
+  [ -f "$bettervim" ] && alias vim="$bettervim"
+  [ -f "$HOME$bettervim" ] && alias vim="$HOME$bettervim"
 fi
