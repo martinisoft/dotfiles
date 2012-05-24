@@ -34,15 +34,24 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-" Highlight line under the cursor
-set cursorline
-highlight CursorLine cterm=NONE ctermbg=234 ctermfg=NONE
-
 " pastetoggle (set paste/nopaste)
 set pastetoggle=<F12>
 
 " Railscasts theme
 colorscheme railscasts
+
+" Highlight line under the cursor
+set cursorline
+hi CursorLine   cterm=None ctermbg=darkgrey ctermfg=white guibg=darkgrey guifg=white
+
+" <Leader>c to toggle line highlighting
+nnoremap <Leader>c :set cursorline!<CR>
+
+" Change Color when entering Insert Mode
+autocmd InsertEnter * highlight CursorLine ctermbg=None ctermfg=Red
+
+" Revert Color to default when leaving Insert Mode
+autocmd InsertLeave * highlight CursorLine ctermbg=darkgrey ctermfg=white
 
 " Custom Rails.vim commands
 autocmd User Rails Rnavcommand turnip spec/features -suffix=.feature -default=cucumber
