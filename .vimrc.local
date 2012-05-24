@@ -38,6 +38,9 @@ set expandtab
 set cursorline
 highlight CursorLine cterm=NONE ctermbg=234 ctermfg=NONE
 
+" pastetoggle (set paste/nopaste)
+set pastetoggle=<F12>
+
 " Railscasts theme
 colorscheme railscasts
 
