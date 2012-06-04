@@ -30,13 +30,14 @@ alias tmux='tmux -2'
 alias vi='vim'
 
 # Platform Specific Options
-# OSX / BSD
 uname=`uname`
+# GNU Linux
 if [[ $uname = 'Linux' ]]; then
   alias ls='ls --color=auto'
   alias grep='grep --color=auto'
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
+# OSX / FreeBSD
 elif [[ $uname = 'FreeBSD' || $uname = 'Darwin' ]]; then
   VISUAL=vim
   EDITOR="$VISUAL"
