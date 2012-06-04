@@ -72,3 +72,6 @@ git() {
   # Setup git command
   command git "$@"
 }
+
+# add rvm to path
+PATH=$PATH:$HOME/bin:$HOME/.rvm/bin # Add RVM to PATH for scripting
