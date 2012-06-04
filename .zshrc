@@ -65,4 +65,10 @@ RPROMPT=$'%(?..{%{$fg[red]%}%?%{$reset_color%}})'
 alias1="$HOME/.bash_aliases"
 [[ ! -a $alias1 ]] || source $alias1
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# git command
+git() {
+  # Does .hitch_export_authors exist? Load it!
+  [ -f "$HOME/.hitch_export_authors" ] && . "$HOME/.hitch_export_authors"
+  # Setup git command
+  command git "$@"
+}

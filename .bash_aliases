@@ -15,6 +15,9 @@ alias grc='git rebase --continue'
 alias gra='git rebase --abort'
 alias reset-authors='git commit --amend --reset-author -C HEAD'
 
+# Hitch Gem
+alias unhitch='hitch -u'
+
 # Directory listing
 alias ll='ls -alF'
 alias la='ls -A'
