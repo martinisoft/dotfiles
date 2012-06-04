@@ -18,7 +18,6 @@ get_bundle() {
   )
 }
 
-get_bundle adamlowe vim-slurper
 get_bundle duff vim-bufonly
 get_bundle godlygeek tabular
 get_bundle kchmck vim-coffee-script
@@ -44,9 +43,7 @@ get_bundle tpope vim-repeat
 get_bundle tpope vim-speeddating
 get_bundle tpope vim-surround
 get_bundle tpope vim-unimpaired
-get_bundle tpope vim-vividchalk
 get_bundle vim-ruby vim-ruby
-get_bundle wgibbs vim-irblack
 get_bundle vim-scripts bufkill.vim
 get_bundle vim-scripts bufexplorer.zip
 get_bundle jgdavey vim-blockle
