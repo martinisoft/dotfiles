@@ -1,1 +1,5 @@
 .DS_Store
+bin/Info*
+bin/light
+bin/phantomjs
+bin/subl
