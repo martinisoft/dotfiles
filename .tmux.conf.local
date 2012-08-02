@@ -1,13 +1,2 @@
-# Status bar background and forground
-set -g status-bg colour234
-set -g status-fg white
-
-# Highlight active window
-set-window-option -g window-status-current-fg colour166
-set-window-option -g window-status-current-bg colour236
-
-# Set right side status bar
-set -g status-right '#[fg=colour208][%a %R]'
-
 # Reload changes in tmux, handy
 bind r source-file ~/.tmux.conf.local
