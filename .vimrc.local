@@ -5,6 +5,12 @@
 " Highlight matches.
 set hlsearch
 
+" Necessary to show Unicode glyphs
+set encoding=utf-8
+
+" Powerline
+let g:Powerline_symbols = 'fancy'
+
 " But case-sensitive if expression contains a capital letter.
 set smartcase
 
