@@ -41,7 +41,7 @@ set shiftwidth=2
 set expandtab
 
 " pastetoggle (set paste/nopaste)
-set pastetoggle=<F12>
+set pastetoggle=<F9>
 
 " Railscasts theme
 colorscheme railscasts
