@@ -54,5 +54,6 @@ get_bundle gregsexton gitv
 get_bundle nathanaelkane vim-indent-guides
 get_bundle ecomba vim-ruby-refactoring
 get_bundle Lokaltog vim-powerline
+get_bundle kien ctrlp.vim
 
 vim -c 'call pathogen#helptags()|q'
