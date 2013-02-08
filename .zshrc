@@ -32,6 +32,9 @@ setopt INC_APPEND_HISTORY
 (( ${+EDITOR}  )) || export EDITOR='vim'
 export PSQL_EDITOR='vim -c"set syntax=sql"'
 
+# Python virtualenv (via Homebrew)
+source /usr/local/share/python/virtualenvwrapper.sh
+
 # Credit for this awesome git prompt goes to:
 # http://briancarper.net/blog/570/git-info-in-your-zsh-prompt
 autoload -Uz vcs_info
