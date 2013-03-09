@@ -1,26 +1,32 @@
 [alias]
+	st = status
+	ci = commit
 	co = checkout
 	cp = cherry-pick
-	put = push origin HEAD
-	fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
-	squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
-	ri = rebase --interactive
-	br = branch
-	pruneremote = remote prune origin
+	put = push origin head
+	fixup = !sh -c 'REV=$(git rev-parse $1) && git commit --fixup $@ && git rebase -i --autosquash $REV^' -
+	squash = !sh -c 'REV=$(git rev-parse $1) && git commit --squash $@ && git rebase -i --autosquash $REV^' -
 	tree = log --graph --oneline --decorate --color --all
 	tr = log --graph --oneline --decorate --color
-	unpushed = !"PROJ_BRANCH=$(git symbolic-ref HEAD | sed 's|refs/heads/||') && git log origin/$PROJ_BRANCH..HEAD"
-	unpulled = !"PROJ_BRANCH=$(git symbolic-ref HEAD | sed 's|refs/heads/||') && git fetch && git log HEAD..origin/$PROJ_BRANCH"
-	add-untracked = !"git status --porcelain | awk '/\\?\\?/{ print $2 }' | xargs git add"
-	ln = log --pretty=format:'%Cblue%h %Cred* %C(yellow)%s'
-	reset-authors = commit --amend --reset-author -CHEAD
-[color]
-	ui = auto
+	ri = rebase --interactive
 [core]
+	quotepath = false
 	editor = vim
 	whitespace = warn
+	excludesfile = ~/.gitignore
+[color]
+	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[help]
+	autocorrect = 10
 [interactive]
 	singlekey = true
-[user]
-	name = Aaron Kalin
-	email = akalin@martinisoftware.com
+[include]
+	path = ~/.gitconfig.local
+[gc]
+	auto = 0
+[push]
+	default = simple
