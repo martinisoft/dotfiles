@@ -5,6 +5,9 @@
 " Highlight matches.
 set hlsearch
 
+" Always show the statusline
+set laststatus=2
+
 " Necessary to show Unicode glyphs
 set encoding=utf-8
 
@@ -19,6 +22,10 @@ set number
 " Show cursor position.
 set ruler
 
+" Enable TAB indent and SHIFT-TAB unindent
+vnoremap <silent> <TAB> >gv
+vnoremap <silent> <S-TAB> <gv
+
 " Set the terminal's title.
 set title
 
@@ -31,6 +38,8 @@ set t_Co=256
 " Don't make a backup before overwriting a file.
 set nobackup
 set nowritebackup
+
+set nolist
 
 " Persistent undo files should be elsewhere
 set undodir=$TEMP
@@ -61,3 +70,50 @@ autocmd InsertLeave * highlight CursorLine ctermbg=darkgrey ctermfg=white
 
 " The Silver Searcher!
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+command! -bar -range=% Trim :<line1>,<line2>s/\s\+$//e
+command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
+
+if !exists('g:rails_gem_projections')
+  let g:rails_gem_projections = {}
+endif
+
+call extend(g:rails_gem_projections, {
+      \ "active_model_serializers": {
+      \   "app/serializers/*_serializer.rb": {
+      \     "command": "serializer",
+      \     "template": "class %SSerializer < ActiveModel::Serializer\nend",
+      \     "affinity": "model"}},
+      \ "rspec-core": {
+      \    "spec/support/*.rb": {
+      \      "command": "support"}},
+      \ "cucumber": {
+      \   "features/*.feature": {
+      \     "command": "feature",
+      \     "template": "Feature: %h"},
+      \   "features/support/*.rb": {
+      \     "command": "support"},
+      \   "features/support/env.rb": {
+      \     "command": "support"},
+      \   "features/step_definitions/*_steps.rb": {
+      \     "command": "steps"}},
+      \ "carrierwave": {
+      \   "app/uploaders/*_uploader.rb": {
+      \     "command": "uploader",
+      \     "template": "class %SUploader < CarrierWave::Uploader::Base\nend"}},
+      \ "fabrication": {
+      \   "spec/fabricators/*_fabricator.rb": {
+      \     "command": ["fabricator", "factory"],
+      \     "alternate": "app/models/%s.rb",
+      \     "related": "db/schema.rb#%p",
+      \     "test": "spec/models/%s_spec.rb",
+      \     "template": "Fabricator :%s do\nend",
+      \     "affinity": "model"}}
+      \ }, 'keep')
