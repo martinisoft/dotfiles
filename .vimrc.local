@@ -71,6 +71,7 @@ autocmd InsertLeave * highlight CursorLine ctermbg=darkgrey ctermfg=white
 " The Silver Searcher!
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+" Highlight extra whitespace like git does, eye-bleeding red blocks
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
@@ -78,9 +79,11 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+" Trim and Ruby 1.9 Hash Syntax converters courtesy of hashrocket.vim
 command! -bar -range=% Trim :<line1>,<line2>s/\s\+$//e
 command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
 
+" Setup base projections for Rails.vim
 if !exists('g:rails_gem_projections')
   let g:rails_gem_projections = {}
 endif
