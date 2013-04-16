@@ -16,6 +16,9 @@ alias gra='git rebase --abort'
 alias reset-authors='git commit --amend --reset-author -C HEAD'
 alias git-count='git shortlog -sn'
 
+# Bundler
+alias be='bundle exec'
+
 # Hitch Gem
 alias unhitch='hitch -u'
 
