@@ -52,8 +52,12 @@ set expandtab
 " pastetoggle (set paste/nopaste)
 set pastetoggle=<F9>
 
-" Railscasts theme
-colorscheme railscasts
+" Theme
+" set background=dark
+" let g:solarized_termcolors=256
+" colorscheme solarized
+colorscheme hybrid
+
 
 " Highlight line under the cursor
 set cursorline
