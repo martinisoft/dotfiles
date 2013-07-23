@@ -102,6 +102,10 @@ call extend(g:rails_gem_projections, {
       \     "command": "serializer",
       \     "template": "class %SSerializer < ActiveModel::Serializer\nend",
       \     "affinity": "model"}},
+      \ "draper": {
+      \    "app/decorators/*_decorator.rb": {
+      \      "command": "decorator",
+      \      "template": ""}},
       \ "rspec-core": {
       \    "spec/support/*.rb": {
       \      "command": "support",
