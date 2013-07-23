@@ -12,3 +12,8 @@ Shell
 -----
 
 I am in the process of migrating over to zsh while maintaining some level of bash compatibility.
+
+License
+-------
+
+This repository is licensed under the MIT License (see LICENSE file for details)
