@@ -58,6 +58,10 @@ set pastetoggle=<F9>
 " colorscheme solarized
 colorscheme hybrid
 
+" IdentGuides configuration
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=darkgrey   ctermbg=236
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=lightgrey ctermbg=235
 
 " Highlight line under the cursor
 set cursorline
