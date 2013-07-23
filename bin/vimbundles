@@ -51,9 +51,12 @@ get_bundle jgdavey vim-railscasts
 get_bundle jgdavey vim-turbux
 get_bundle jgdavey tslime.vim
 get_bundle gregsexton gitv
-get_bundle nathanaelkane vim-indent-guides
 get_bundle ecomba vim-ruby-refactoring
 get_bundle Lokaltog vim-powerline
 get_bundle kien ctrlp.vim
+get_bundle evanmiller nginx-vim-syntax
+get_bundle nathanaelkane vim-indent-guides
+get_bundle altercation vim-colors-solarized
+get_bundle w0ng vim-hybrid
 
 vim -c 'call pathogen#helptags()|q'
