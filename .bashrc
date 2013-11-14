@@ -34,8 +34,6 @@ B_LGREY="\[\033[47m\]"
 
 ## Custom Options
 
-# Update PATH with additional user-created directories
-PATH="/usr/local/bin:/usr/local/share/python:/usr/local/sbin:$HOME/bin:$PATH"
 # Set editor to VIM
 VISUAL=vim
 EDITOR="$VISUAL"
