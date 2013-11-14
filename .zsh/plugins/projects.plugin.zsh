@@ -11,7 +11,8 @@ pux() {
   if ! $(tmux has-session -t $name &>/dev/null); then
     tmux new-session -d -n code -s $name
     tmux new-window -a -d -n server -t $name:1
-    tmux new-window -a -d -n console -t $name:2
+    tmux new-window -a -d -n guard -t $name:2
+    tmux new-window -a -d -n console -t $name:3
     tmux select-layout -t $name main-vertical
     tmux send-keys -t $name:1 'vim .' C-m
   fi
