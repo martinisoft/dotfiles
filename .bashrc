@@ -91,5 +91,10 @@ source ~/.git-completion.bash
 # include a local customization
 [ ! -f "$HOME/.bashrc.local" ] || . "$HOME/.bashrc.local"
 
+# load a local bin to PATH if it exists
+if [ -d "$HOME/bin" ] ; then
+  PATH="$HOME/bin:$PATH"
+fi
+
 # RVM Autocomplete
 [[ -r "$HOME/.rvm/scripts/completion" ]] && . "$HOME/.rvm/scripts/completion"
