@@ -16,6 +16,3 @@ alias gap='git add -p'
 alias glod='git log --oneline --decorate'
 
 alias rgu='rvm gemset use'
-
-# Snow Leopard Option
-export ARCHFLAGS="-arch x86_64"
