@@ -92,6 +92,19 @@ command! -bar -range=% Trim :<line1>,<line2>s/\s\+$//e
 command! -bar -range=% NotRocket :<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/ge
 
 " Setup base projections for Rails.vim
+if !exists('g:rails_projections')
+  let g:rails_projections = {}
+endif
+
+let g:rails_projections = {
+      \ "config/projections.json": {
+      \   "command": "projections"
+      \ },
+      \ "spec/features/*_spec.rb": {
+      \   "command": "feature",
+      \   "template": "require 'spec_helper'\n\nfeature '%h' do\n\nend",
+      \ }}
+
 if !exists('g:rails_gem_projections')
   let g:rails_gem_projections = {}
 endif
@@ -100,12 +113,27 @@ call extend(g:rails_gem_projections, {
       \ "active_model_serializers": {
       \   "app/serializers/*_serializer.rb": {
       \     "command": "serializer",
-      \     "template": "class %SSerializer < ActiveModel::Serializer\nend",
-      \     "affinity": "model"}},
+      \     "affinity": "model",
+      \     "test": "spec/serializers/%s_spec.rb",
+      \     "related": "app/models/%s.rb",
+      \     "template": "class %SSerializer < ActiveModel::Serializer\nend"}},
       \ "draper": {
-      \    "app/decorators/*_decorator.rb": {
-      \      "command": "decorator",
-      \      "template": ""}},
+      \   "app/decorators/*_decorator.rb": {
+      \     "command": "decorator",
+      \     "affinity": "model",
+      \     "test": "spec/decorators/%s_spec.rb",
+      \     "related": "app/models/%s.rb",
+      \     "template": "class %SDecorator < Draper::Decorator\nend"}},
+      \ "pundit": {
+      \   "app/policies/*_policy.rb": {
+      \     "command": "policy",
+      \     "affinity": "model",
+      \     "test": "spec/policies/%s_spec.rb",
+      \     "related": "app/policies/%s.rb",
+      \     "template": "class %SPolicy < ApplicationPolicy\nend"}},
+      \ "simple_form": {
+      \   "app/inputs/*_input.rb": {
+      \     "command": "input"}},
       \ "rspec-core": {
       \    "spec/support/*.rb": {
       \      "command": "support",
