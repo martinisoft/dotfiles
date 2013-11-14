@@ -98,3 +98,5 @@ fi
 
 # RVM Autocomplete
 [[ -r "$HOME/.rvm/scripts/completion" ]] && . "$HOME/.rvm/scripts/completion"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
