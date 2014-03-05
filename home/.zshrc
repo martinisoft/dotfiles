@@ -77,4 +77,5 @@ git() {
 }
 
 # add rvm to path
-PATH=$PATH:$HOME/bin:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
