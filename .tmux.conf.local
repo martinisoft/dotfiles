@@ -1,2 +1,0 @@
-# Reload changes in tmux, handy
-bind r source-file ~/.tmux.conf.local
