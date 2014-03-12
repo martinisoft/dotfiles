@@ -76,6 +76,18 @@ git() {
   command git "$@"
 }
 
-# add rvm to path
-PATH=$PATH:$HOME/bin # Add RVM to PATH for scripting
+# exec chefvm
+if [ -f "$HOME/.chefvm/bin/chefvm" ] ; then
+  eval "$($HOME/.chefvm/bin/chefvm init -)"
+fi
+
+# homeshick
+if [ -f "$HOME/.homesick/repos/homeshick/homeshick.sh" ] ; then
+  source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+fi
+
+# Add bin to PATH if it exists
+if [ -d "$HOME/bin" ] ; then
+  PATH="$HOME/bin:$PATH"
+fi
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
