@@ -16,7 +16,7 @@ set splitbelow
 
 set hidden
 
-set guifont=Monaco:h16
+set guifont=Inconsolata-dz\ for\ Powerline:h16
 set guioptions-=T guioptions-=e guioptions-=L guioptions-=r
 set shell=bash
 

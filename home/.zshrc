@@ -86,8 +86,21 @@ if [ -f "$HOME/.homesick/repos/homeshick/homeshick.sh" ] ; then
   source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 fi
 
+# hoist homebrew bin higher
+if [ -d "/usr/local/bin" ] ; then
+  PATH="/usr/local/bin:$PATH"
+fi
+
+# use better mac vim on OSX
+if [ "$(uname)" = Darwin -a "$(command -v vim)" = /usr/bin/vim ]; then
+  bettervim="/Applications/MacVim.app/Contents/MacOS/Vim"
+  [ -f "$bettervim" ] && alias vim="$bettervim"
+  [ -f "$HOME$bettervim" ] && alias vim="$HOME$bettervim"
+fi
+
 # Add bin to PATH if it exists
 if [ -d "$HOME/bin" ] ; then
   PATH="$HOME/bin:$PATH"
 fi
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
