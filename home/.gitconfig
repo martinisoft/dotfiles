@@ -13,7 +13,7 @@
 	quotepath = false
 	editor = vim
 	whitespace = warn
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore.global
 [color]
 	ui = auto
 	diff = auto
