@@ -91,11 +91,12 @@ if [ -d "/usr/local/bin" ] ; then
   PATH="/usr/local/bin:$PATH"
 fi
 
-# use better mac vim on OSX
-if [ "$(uname)" = Darwin -a "$(command -v vim)" = /usr/bin/vim ]; then
-  bettervim="/Applications/MacVim.app/Contents/MacOS/Vim"
-  [ -f "$bettervim" ] && alias vim="$bettervim"
-  [ -f "$HOME$bettervim" ] && alias vim="$HOME$bettervim"
+# Use NeoVIM
+alias vim="nvim"
+
+# Add Chef DK bin to PATH if it exists
+if [ -d "$HOME/.chefdk/gem/ruby/2.1.0/bin" ] ; then
+  PATH="$HOME/.chefdk/gem/ruby/2.1.0/bin:$PATH"
 fi
 
 # Add bin to PATH if it exists
