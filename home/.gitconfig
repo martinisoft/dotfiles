@@ -30,3 +30,5 @@
 	auto = 0
 [push]
 	default = simple
+[branch]
+	autosetuprebase = always
