@@ -104,4 +104,10 @@ if [ -d "$HOME/bin" ] ; then
   PATH="$HOME/bin:$PATH"
 fi
 
+# http://blog.rubygems.org/2013/12/26/2.2.0-released.html
+# Commented out due to a bug
+# export RUBYGEMS_GEMDEPS="-"
+# Make a mini alias wrapper to prevent environment issues for global tools
+# alias nobundle="RUBYGEMS_GEMDEPS=''"
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
