@@ -59,5 +59,8 @@ get_bundle altercation vim-colors-solarized
 get_bundle bling vim-airline
 get_bundle scrooloose syntastic
 get_bundle edkolev tmuxline.vim
+get_bundle guns vim-clojure-static
+get_bundle tpope vim-fireplace
+get_bundle tpope vim-classpath
 
 vim -c 'call pathogen#helptags()|q'
