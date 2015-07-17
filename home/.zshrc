@@ -142,3 +142,6 @@ fi
 # alias nobundle="RUBYGEMS_GEMDEPS=''"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# added by travis gem
+[ -f /Users/martinisoft/.travis/travis.sh ] && source /Users/martinisoft/.travis/travis.sh
