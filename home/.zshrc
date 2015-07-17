@@ -27,6 +27,37 @@ SAVEHIST=10000
 setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY
 
+# set vi mode
+bindkey -v
+
+# shorten the key delay
+export KEYTIMEOUT=1
+
+# Use vim cli mode
+bindkey '^P' up-history
+bindkey '^N' down-history
+
+# backspace and ^h working even after
+# returning from command mode
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+
+# ctrl-w removed word backwards
+bindkey '^w' backward-kill-word
+
+# ctrl-r starts searching history backward
+bindkey '^r' history-incremental-search-backward
+
+# display the current mode
+function zle-line-init zle-keymap-select {
+  VIM_PROMPT="[% %{$fg[red]%}NORMAL%{$reset_color%}]%"
+  RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} %(?.. {%{$fg[red]%}%?%{$reset_color%}})"
+  zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+
 # default apps
 (( ${+PAGER}   )) || export PAGER='less'
 (( ${+EDITOR}  )) || export EDITOR='vim'
