@@ -1,7 +1,76 @@
-runtime! autoload/pathogen.vim
-if exists('g:loaded_pathogen')
-  execute pathogen#infect('~/.vimbundles/{}')
+if has('vim_starting')
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+
+  " Required:
+  set runtimepath+=/Users/martinisoft/.vim/bundle/neobundle.vim/
 endif
+
+" Required:
+call neobundle#begin(expand('/Users/martinisoft/.vim/bundle'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Add or remove your Bundles here:
+NeoBundle 'duff/vim-bufonly'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'mileszs/ack.vim'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'therubymug/vim-pyte'
+NeoBundle 'tpope/vim-abolish'
+NeoBundle 'tpope/vim-bundler'
+NeoBundle 'tpope/vim-commentary'
+NeoBundle 'tpope/vim-cucumber'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'tpope/vim-eunuch'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-git'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'tpope/vim-markdown'
+NeoBundle 'tpope/vim-pathogen'
+NeoBundle 'tpope/vim-rake'
+NeoBundle 'tpope/vim-ragtag'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-speeddating'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'vim-scripts/bufkill.vim'
+NeoBundle 'vim-scripts/bufexplorer.zip'
+NeoBundle 'jgdavey/vim-blockle'
+NeoBundle 'jgdavey/vim-railscasts'
+NeoBundle 'jgdavey/vim-turbux'
+NeoBundle 'jgdavey/tslime.vim'
+NeoBundle 'gregsexton/gitv'
+NeoBundle 'ecomba/vim-ruby-refactoring'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'evanmiller/nginx-vim-syntax'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'edkolev/tmuxline.vim'
+NeoBundle 'guns/vim-clojure-static'
+NeoBundle 'tpope/vim-fireplace'
+NeoBundle 'tpope/vim-classpath'
+NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'elzr/vim-json'
+NeoBundle 'cespare/vim-toml'
+
+" You can specify revision/branch/tag.
+NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+
+" Required:
+call neobundle#end()
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
 
 syntax on
 filetype plugin indent on
