@@ -87,6 +87,11 @@ set guifont=Inconsolata-dz\ for\ Powerline:h16
 set guioptions-=T guioptions-=e guioptions-=L guioptions-=r
 set shell=bash
 
+" pastetoggle (set paste/nopaste) if we aren't in NeoVim
+if !has('nvim')
+  set pastetoggle=<F9>
+endif
+
 augroup vimrc
   autocmd!
   autocmd GuiEnter * set columns=120 lines=70 number
