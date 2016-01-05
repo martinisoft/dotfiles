@@ -118,8 +118,8 @@ fi
 alias vim="nvim"
 
 # Add Chef DK bin to PATH if it exists
-if [ -d "$HOME/.chefdk/gem/ruby/2.1.0/bin" ] ; then
-  PATH="$HOME/.chefdk/gem/ruby/2.1.0/bin:$PATH"
+if [ -d /opt/chefdk ] ; then
+  eval "$(chef shell-init zsh)"
 fi
 
 # Add bin to PATH if it exists
