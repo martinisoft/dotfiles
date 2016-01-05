@@ -99,14 +99,6 @@ RPROMPT=$'%(?..{%{$fg[red]%}%?%{$reset_color%}})'
 alias1="$HOME/.bash_aliases"
 [[ ! -a $alias1 ]] || source $alias1
 
-# git command
-git() {
-  # Does .hitch_export_authors exist? Load it!
-  [ -f "$HOME/.hitch_export_authors" ] && . "$HOME/.hitch_export_authors"
-  # Setup git command
-  command git "$@"
-}
-
 # exec chefvm
 if [ -f "$HOME/.chefvm/bin/chefvm" ] ; then
   eval "$($HOME/.chefvm/bin/chefvm init -)"
