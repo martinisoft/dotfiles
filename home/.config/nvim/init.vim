@@ -55,9 +55,7 @@ NeoBundle 'tpope/vim-classpath'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'cespare/vim-toml'
-
-" You can specify revision/branch/tag.
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+NeoBundle 'Shougo/vimshell'
 
 " Required:
 call neobundle#end()
