@@ -57,6 +57,7 @@ NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'cespare/vim-toml'
 NeoBundle 'Shougo/vimshell'
+NeoBundle 'tmux-plugins/vim-tmux'
 
 " Required:
 call neobundle#end()
