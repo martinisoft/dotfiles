@@ -58,6 +58,12 @@ NeoBundle 'elzr/vim-json'
 NeoBundle 'cespare/vim-toml'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'tmux-plugins/vim-tmux'
+NeoBundle 'fatih/vim-go'
+NeoBundle 'dag/vim-fish'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'nsf/gocode'
+NeoBundle 'Shougo/deoplete.nvim'
+NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
 
 " Required:
 call neobundle#end()
