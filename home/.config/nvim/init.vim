@@ -99,10 +99,16 @@ if !has('nvim')
   set pastetoggle=<F9>
 endif
 
+" For racer-rust
+let g:racer_cmd = "/Users/martinisoft/.cargo/bin/racer"
+let $RUST_SRC_PATH="/Users/martinisoft/projects/rust/src/"
+
 augroup vimrc
   autocmd!
   autocmd GuiEnter * set columns=120 lines=70 number
 augroup END
+
+let g:deoplete#enable_at_startup = 1
 
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
