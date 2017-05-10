@@ -65,7 +65,12 @@ NeoBundle 'nsf/gocode'
 NeoBundle 'Shougo/deoplete.nvim'
 NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
 
-" Required:
+" Searching
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" Required for NeoBundle
 call neobundle#end()
 
 " If there are uninstalled bundles found on startup,
