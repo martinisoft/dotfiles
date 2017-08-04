@@ -63,6 +63,7 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'nsf/gocode'
 NeoBundle 'Shougo/deoplete.nvim'
 NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
+NeoBundle 'editorconfig/editorconfig-vim'
 
 " Searching
 if executable('ag')
