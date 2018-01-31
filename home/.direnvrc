@@ -6,14 +6,13 @@ use_chefdk() {
 ## Ruby
 use_ruby() {
   local ruby_dir=$HOME/.rubies/ruby-$1
-  load_prefix $ruby_dir
+  load_prefix "$ruby_dir"
   layout ruby
 }
 
 ## Rust
 use_rust() {
-  PATH_add $HOME/.cargo/bin
-  export RUST_SRC_PATH=$HOME/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src
+  source $HOME/.cargo/env
 }
 
 # vim: set ft=bash:
