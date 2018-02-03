@@ -2,71 +2,62 @@ if has('vim_starting')
   if &compatible
     set nocompatible               " Be iMproved
   endif
-
-  " Required:
-  set runtimepath+=~/.config/nvim/bundle/neobundle.vim/
 endif
 
-" Required:
-call neobundle#begin(expand('~/.config/nvim/bundle'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.local/share/nvim/plugged')
 
 " Add or remove your Bundles here:
-NeoBundle 'duff/vim-bufonly'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'jremmen/vim-ripgrep'
-NeoBundle 'tpope/vim-abolish'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'tpope/vim-eunuch'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-git'
-NeoBundle 'tpope/vim-rake'
-NeoBundle 'tpope/vim-ragtag'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-speeddating'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'qpkorr/vim-bufkill'
-NeoBundle 'vim-scripts/bufexplorer.zip'
-NeoBundle 'gregsexton/gitv'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'edkolev/tmuxline.vim'
-NeoBundle 'guns/vim-clojure-static'
-NeoBundle 'tpope/vim-fireplace'
-NeoBundle 'tpope/vim-classpath'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'tmux-plugins/vim-tmux'
-NeoBundle 'dag/vim-fish'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'nsf/gocode'
-NeoBundle 'autozimu/LanguageClient-neovim'
-NeoBundle 'roxma/nvim-completion-manager'
-NeoBundle 'Shougo/deoplete.nvim'
-NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
-NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'hashivim/vim-terraform'
-NeoBundle 'sheerun/vim-polyglot'
+Plug 'duff/vim-bufonly'
+Plug 'godlygeek/tabular'
+Plug 'jremmen/vim-ripgrep'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'qpkorr/vim-bufkill'
+Plug 'vim-scripts/bufexplorer.zip'
+Plug 'gregsexton/gitv'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/syntastic'
+Plug 'edkolev/tmuxline.vim'
+Plug 'guns/vim-clojure-static'
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-classpath'
+Plug 'Shougo/vimshell'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'dag/vim-fish'
+Plug 'airblade/vim-gitgutter'
+Plug 'nsf/gocode'
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+Plug 'roxma/nvim-completion-manager'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-go', { 'do': 'make' }
+Plug 'editorconfig/editorconfig-vim'
+Plug 'hashivim/vim-terraform'
+Plug 'sheerun/vim-polyglot'
+
+" Initialize plugin system
+call plug#end()
 
 " Searching
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
-
-" Required for NeoBundle
-call neobundle#end()
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
 
 syntax on
 filetype plugin indent on
