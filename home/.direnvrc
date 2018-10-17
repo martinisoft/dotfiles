@@ -15,4 +15,13 @@ use_rust() {
   source $HOME/.cargo/env
 }
 
+## Add in local .vimrc files into vim's execution
+add_extra_vimrc() {
+  local extravim="$(find_up .vimrc)"
+  if [ -n "$extravim" ]; then
+    echo "Adding extra .vimrc: ${extravim}"
+    path_add EXTRA_VIM "$extravim"
+  fi
+}
+
 # vim: set ft=bash:

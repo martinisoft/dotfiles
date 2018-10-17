@@ -30,7 +30,6 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'gregsexton/gitv'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
@@ -42,9 +41,12 @@ Plug 'Shougo/vimshell'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'dag/vim-fish'
 Plug 'airblade/vim-gitgutter'
+Plug 'fatih/vim-go'
 Plug 'nsf/gocode'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
-Plug 'roxma/nvim-completion-manager'
+Plug 'ncm2/ncm2'
+" ncm2 requires nvim-yarp
+Plug 'roxma/nvim-yarp'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make' }
 Plug 'editorconfig/editorconfig-vim'
@@ -52,6 +54,8 @@ Plug 'hashivim/vim-terraform'
 Plug 'sheerun/vim-polyglot'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'kaicataldo/material.vim'
+Plug 'mattn/emmet-vim'
 
 " Initialize plugin system
 call plug#end()
@@ -74,8 +78,9 @@ set splitbelow
 
 set hidden
 
-set guifont=Inconsolata-dz\ for\ Powerline:h16
-set guioptions-=T guioptions-=e guioptions-=L guioptions-=r
+set guifont=Fira\ Code:h12
+" set guifont=Inconsolata-dz\ for\ Powerline:h16
+" set guioptions-=T guioptions-=e guioptions-=L guioptions-=r
 set shell=bash
 
 " pastetoggle (set paste/nopaste) if we aren't in NeoVim
@@ -87,12 +92,22 @@ endif
 let g:racer_cmd = "/Users/martinisoft/.cargo/bin/racer"
 let $RUST_SRC_PATH="/Users/martinisoft/projects/rust/src/"
 
+" For vim-go
+let g:go_info_mode = 'guru'
+
 augroup vimrc
   autocmd!
   autocmd GuiEnter * set columns=120 lines=70 number
 augroup END
 
+" Use deoplete
 let g:deoplete#enable_at_startup = 1
+
+" enable ncm2 for all buffer
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" note that must keep noinsert in completeopt, the others is optional
+set completeopt=noinsert,menuone,noselect
 
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
@@ -107,6 +122,19 @@ nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 " Ripgrep via Fzf. Search on mega steroids.
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
+" Enable per-command history.
+" CTRL-N and CTRL-P will be automatically bound to next-history and
+" previous-history instead of down and up. If you don't like the change,
+" explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
+endif
+
+" ==== local .vimrc with .envrc using add_extra_vimrc
+if exists("$EXTRA_VIM")
+  for path in split($EXTRA_VIM, ':')
+    exec "source ".path
+  endfor
 endif
