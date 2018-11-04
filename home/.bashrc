@@ -81,9 +81,6 @@ alias gpr='git pull --rebase'
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 
-# git bash shell script
-source ~/.git-completion.bash
-
 [ -z "$PS1" ] || stty -ixon
 
 [ -z "$PS1" ] || PS1="${GREEN}\h${LGRAY}:${LBLUE}\W${RED}\$(__git_ps1 '(%s)') ${GREEN}\u${NORM}\$ "
@@ -95,8 +92,3 @@ source ~/.git-completion.bash
 if [ -d "$HOME/bin" ] ; then
   PATH="$HOME/bin:$PATH"
 fi
-
-# RVM Autocomplete
-[[ -r "$HOME/.rvm/scripts/completion" ]] && . "$HOME/.rvm/scripts/completion"
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
