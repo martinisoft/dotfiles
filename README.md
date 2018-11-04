@@ -29,6 +29,4 @@ bash compatibility for direnv.
 License and Author
 ---
 
-Copyright (c) 2010-2017 Aaron Kalin
-
-This repository is licensed under the MIT License (see LICENSE file for details)
+See LICENSE for details.
