@@ -85,6 +85,10 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true
 
 [ -z "$PS1" ] || PS1="${GREEN}\h${LGRAY}:${LBLUE}\W${RED}\$(__git_ps1 '(%s)') ${GREEN}\u${NORM}\$ "
 
+if [ -d "$HOME/.cargo/bin" ] ; then
+  export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 # include a local customization
 [ ! -f "$HOME/.bashrc.local" ] || . "$HOME/.bashrc.local"
 
