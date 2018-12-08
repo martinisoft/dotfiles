@@ -32,7 +32,7 @@ Plug 'gregsexton/gitv'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'edkolev/tmuxline.vim'
 Plug 'guns/vim-clojure-static'
 Plug 'tpope/vim-fireplace'
@@ -43,7 +43,6 @@ Plug 'dag/vim-fish'
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go'
 Plug 'nsf/gocode'
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'ncm2/ncm2'
 " ncm2 requires nvim-yarp
 Plug 'roxma/nvim-yarp'
@@ -56,6 +55,8 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'kaicataldo/material.vim'
 Plug 'mattn/emmet-vim'
+Plug 'lilydjwg/colorizer'
+Plug 'lambdalisue/fila.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -88,10 +89,6 @@ if !has('nvim')
   set pastetoggle=<F9>
 endif
 
-" For racer-rust
-let g:racer_cmd = "/Users/martinisoft/.cargo/bin/racer"
-let $RUST_SRC_PATH="/Users/martinisoft/projects/rust/src/"
-
 " For vim-go
 let g:go_info_mode = 'guru'
 
@@ -109,16 +106,6 @@ autocmd BufEnter * call ncm2#enable_for_buffer()
 " note that must keep noinsert in completeopt, the others is optional
 set completeopt=noinsert,menuone,noselect
 
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['javascript-typescript-stdio'],
-    \ }
-
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
-
 " Ripgrep via Fzf. Search on mega steroids.
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
@@ -127,6 +114,9 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 " previous-history instead of down and up. If you don't like the change,
 " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
+
+" Remove netrw banner for now
+let g:netrw_banner = 0
 
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
