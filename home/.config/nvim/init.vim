@@ -11,7 +11,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Add or remove your Bundles here:
 Plug 'duff/vim-bufonly'
-Plug 'godlygeek/tabular'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
@@ -57,6 +56,7 @@ Plug 'kaicataldo/material.vim'
 Plug 'mattn/emmet-vim'
 Plug 'lilydjwg/colorizer'
 Plug 'lambdalisue/fila.vim'
+Plug 'junegunn/vim-easy-align'
 
 " Initialize plugin system
 call plug#end()
