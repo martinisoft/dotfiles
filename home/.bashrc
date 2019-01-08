@@ -96,3 +96,6 @@ fi
 if [ -d "$HOME/bin" ] ; then
   PATH="$HOME/bin:$PATH"
 fi
+
+# added by travis gem
+[ -f /Users/martinisoft/.travis/travis.sh ] && source /Users/martinisoft/.travis/travis.sh
