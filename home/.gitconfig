@@ -38,7 +38,7 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	signingkey = 7DA1321E456A9E3A
+	signingkey = 0x73DE0A83EDA66C57
 	name = Aaron Kalin
 	email = akalin@martinisoftware.com
 [commit]
