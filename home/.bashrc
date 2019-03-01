@@ -99,3 +99,5 @@ fi
 
 # added by travis gem
 [ -f /Users/martinisoft/.travis/travis.sh ] && source /Users/martinisoft/.travis/travis.sh
+
+complete -C /usr/local/bin/vault vault
