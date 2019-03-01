@@ -4,8 +4,7 @@ set -g -x PATH /usr/local/bin $PATH
 set -g -x GPG_TTY (tty)
 set -g -x fish_greeting ''
 set -x EDITOR nvim
-set -x GOPATH ~/.go
-set -g -x PATH $GOPATH/bin $PATH
+set -g -x PATH ~/.go/bin $PATH
 source "$HOME/.homesick/repos/homeshick/homeshick.fish"
 
 alias vi "nvim"
