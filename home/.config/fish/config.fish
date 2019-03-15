@@ -2,10 +2,10 @@ set -g -x PATH ~/bin $PATH
 set -g -x PATH ~/.cargo/bin $PATH
 set -g -x PATH /usr/local/bin $PATH
 set -g -x GPG_TTY (tty)
-set -g -x fish_greeting ''
 set -x EDITOR nvim
 set -g -x PATH ~/.go/bin $PATH
 source "$HOME/.homesick/repos/homeshick/homeshick.fish"
+set fish_greeting
 
 alias vi "nvim"
 alias vim "nvim"
