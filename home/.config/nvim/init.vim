@@ -52,11 +52,11 @@ Plug 'hashivim/vim-terraform'
 Plug 'sheerun/vim-polyglot'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'kaicataldo/material.vim'
 Plug 'mattn/emmet-vim'
 Plug 'lilydjwg/colorizer'
 Plug 'lambdalisue/fila.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Initialize plugin system
 call plug#end()
