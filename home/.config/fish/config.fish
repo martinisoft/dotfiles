@@ -1,11 +1,12 @@
 set -g -x PATH ~/bin $PATH
-set -g -x PATH ~/.cargo/bin $PATH
 set -g -x PATH /usr/local/bin $PATH
+set -g -x PATH /usr/local/sbin $PATH
 set -g -x GPG_TTY (tty)
 set -x EDITOR nvim
 set -g -x GOPATH ~/.go
 set -g -x PATH ~/.go/bin $PATH
 source "$HOME/.homesick/repos/homeshick/homeshick.fish"
+source "$HOME/.cargo/env"
 set fish_greeting
 
 alias vi "nvim"
