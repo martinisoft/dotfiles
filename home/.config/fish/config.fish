@@ -23,7 +23,6 @@ abbr -a gra git rebase --abort
 abbr -a grc git rebase --continue
 abbr -a gst git status -sb
 abbr -a be bundle exec
-abbr -a ce chef exec
 
 fish_vi_key_bindings
 
