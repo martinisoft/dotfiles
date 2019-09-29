@@ -57,6 +57,7 @@ Plug 'lilydjwg/colorizer'
 Plug 'lambdalisue/fila.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'sbdchd/neoformat'
 
 " Initialize plugin system
 call plug#end()
