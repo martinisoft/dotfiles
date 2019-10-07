@@ -36,12 +36,7 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	signingkey = 0x802F8BFB0AA86D93
 	name = Aaron Kalin
 	email = akalin@martinisoftware.com
-[commit]
-	gpgsign = true
-[gpg]
-	program = /usr/local/bin/gpg
 [fetch]
   prune = true
