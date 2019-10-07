@@ -58,6 +58,7 @@ Plug 'lambdalisue/fila.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'sbdchd/neoformat'
+Plug 'tpope/vim-bundler'
 
 " Initialize plugin system
 call plug#end()
