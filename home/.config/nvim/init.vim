@@ -57,6 +57,7 @@ Plug 'lilydjwg/colorizer'
 Plug 'lambdalisue/fila.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'haishanh/night-owl.vim'
 Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-bundler'
 
