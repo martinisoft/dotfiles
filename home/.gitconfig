@@ -10,10 +10,10 @@
 	tr = log --graph --oneline --decorate --color
 	ri = rebase --interactive
 [core]
-	quotepath = false
 	editor = nvim
-	whitespace = warn
 	excludesfile = ~/.gitignore.global
+	quotepath = false
+	whitespace = warn
 [color]
 	ui = auto
 	diff = auto
