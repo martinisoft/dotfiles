@@ -24,9 +24,10 @@
 	quotepath = false
 	whitespace = warn
 [delta]
-  plus-color = "#012800"
+  line-numbers = true
   minus-color = "#340001"
-  syntax-theme = Monokai Extended
+  plus-color = "#012800"
+  syntax-theme = Solarized (dark)
 [fetch]
   prune = true
 [filter "lfs"]
