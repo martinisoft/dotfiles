@@ -20,8 +20,13 @@
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore.global
+  pager = delta
 	quotepath = false
 	whitespace = warn
+[delta]
+  plus-color = "#012800"
+  minus-color = "#340001"
+  syntax-theme = Monokai Extended
 [fetch]
   prune = true
 [filter "lfs"]
@@ -36,6 +41,7 @@
 [init]
 	defaultBranch = main
 [interactive]
+  diffFilter = delta --color-only
 	singlekey = true
 [include]
 	path = ~/.gitconfig.local
