@@ -9,36 +9,36 @@
 	tree = log --graph --oneline --decorate --color --all
 	tr = log --graph --oneline --decorate --color
 	ri = rebase --interactive
-[core]
-	editor = nvim
-	excludesfile = ~/.gitignore.global
-	quotepath = false
-	whitespace = warn
 [color]
 	ui = auto
 	diff = auto
 	status = auto
 	branch = auto
 	interactive = auto
-[help]
-	autocorrect = 10
-[interactive]
-	singlekey = true
-[include]
-	path = ~/.gitconfig.local
-[gc]
-	auto = 0
 [branch]
 	autosetuprebase = always
+[core]
+	editor = nvim
+	excludesfile = ~/.gitignore.global
+	quotepath = false
+	whitespace = warn
+[fetch]
+  prune = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[gc]
+	auto = 0
+[help]
+	autocorrect = 10
+[init]
+	defaultBranch = main
+[interactive]
+	singlekey = true
+[include]
+	path = ~/.gitconfig.local
 [user]
 	name = Aaron Kalin
 	email = akalin@martinisoftware.com
-[fetch]
-  prune = true
-[init]
-	defaultBranch = main
