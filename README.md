@@ -1,32 +1,22 @@
-martinisoft's dotfiles
-===
+# martinisoft's dotfiles
 
-These are my personal system configuration files for things like my shell,
-editors, tooling, etc.
+These are my personal system configuration files for things like my shell, editors, tooling, etc.
 
-How do I even?
----
+## Requirements
 
-This repository is a [homeshick](https://github.com/andsens/homeshick) castle.
-You'll need to install homeshick (homesick also works too) in order to symlink
-everything over.
+* [Homesick](https://github.com/technicalpickles/homesick) or [Homeshick](https://github.com/andsens/homeshick)
+* [Delta](https://github.com/dandavison/delta)
 
-Environment
----
+## Environment
 
-I generally work off my Mac OSX 10.12 system, but lately have been working more
-and more off an Ubuntu 14.04 and FreeBSD 11.1 system.
+I generally work off my Mac OSX 10.15 system, but lately have been working more and more off an Ubuntu 20.04 and FreeBSD 12 system.
 
-The configurations are slowly migrating over to be more agnostic between all
-systems and shells.
+The configurations are slowly migrating over to be more agnostic between all systems and shells.
 
-Shell
----
+## Shell
 
-I am in the process of migrating over to fish while maintaining some level of
-bash compatibility for direnv.
+My primary shell is [Fish](https://fishshell.com/) but I also fall back to [Bash](https://www.gnu.org/software/bash/)
 
-License and Author
----
+## License and Author
 
 See LICENSE for details.
