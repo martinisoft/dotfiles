@@ -1,28 +1,28 @@
 [alias]
-	st = status
-	ci = commit
-	co = checkout
-	cp = cherry-pick
-	put = push origin head
-	fixup = !sh -c 'REV=$(git rev-parse $1) && git commit --fixup $@ && git rebase -i --autosquash $REV^' -
-	squash = !sh -c 'REV=$(git rev-parse $1) && git commit --squash $@ && git rebase -i --autosquash $REV^' -
-	tree = log --graph --oneline --decorate --color --all
-	tr = log --graph --oneline --decorate --color
-	ri = rebase --interactive
+  st = status
+  ci = commit
+  co = checkout
+  cp = cherry-pick
+  put = push origin head
+  fixup = !sh -c 'REV=$(git rev-parse $1) && git commit --fixup $@ && git rebase -i --autosquash $REV^' -
+  squash = !sh -c 'REV=$(git rev-parse $1) && git commit --squash $@ && git rebase -i --autosquash $REV^' -
+  tree = log --graph --oneline --decorate --color --all
+  tr = log --graph --oneline --decorate --color
+  ri = rebase --interactive
 [color]
-	ui = auto
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
+  ui = auto
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always
 [core]
-	editor = nvim
-	excludesfile = ~/.gitignore.global
+  editor = nvim
+  excludesfile = ~/.gitignore.global
   pager = delta
-	quotepath = false
-	whitespace = warn
+  quotepath = false
+  whitespace = warn
 [delta]
   line-numbers = true
   minus-color = "#340001"
@@ -31,21 +31,21 @@
 [fetch]
   prune = true
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 [gc]
-	auto = 0
+  auto = 0
 [help]
-	autocorrect = 10
+  autocorrect = 10
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [interactive]
   diffFilter = delta --color-only
-	singlekey = true
+  singlekey = true
 [include]
-	path = ~/.gitconfig.local
+  path = ~/.gitconfig.local
 [user]
-	name = Aaron Kalin
-	email = akalin@martinisoftware.com
+  name = Aaron Kalin
+  email = akalin@martinisoftware.com
