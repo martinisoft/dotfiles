@@ -9,6 +9,7 @@
   tree = log --graph --oneline --decorate --color --all
   tr = log --graph --oneline --decorate --color
   ri = rebase --interactive
+  wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
 [color]
   ui = auto
   diff = auto
