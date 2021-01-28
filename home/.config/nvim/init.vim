@@ -59,6 +59,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'haishanh/night-owl.vim'
 Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-bundler'
+Plug 'WolfgangMehner/bash-support'
 
 " Initialize plugin system
 call plug#end()
