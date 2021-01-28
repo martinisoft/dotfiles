@@ -1,5 +1,3 @@
-# vim:set ft=sh sw=2 sts=2 ft=sh:
-
 # Git shortcuts
 alias gap='git add -p'
 alias gb='git branch'
