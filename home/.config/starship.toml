@@ -2,3 +2,12 @@
 success_symbol = "[➜](bold green) "
 error_symbol = "[✗](bold red) "
 vicmd_symbol = "[N](bold green) "
+
+[python]
+disabled = true
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
