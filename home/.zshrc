@@ -1,6 +1,9 @@
 # This is for anything that is a interactive login shell
 # It is evaluated after ~/.zshenv and ~/.zprofile
 
+# direnv hook
+eval "$(direnv hook zsh)"
+
 # Starship for that sweet prompt
 eval "$(starship init zsh)"
 
