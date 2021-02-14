@@ -1,18 +1,3 @@
 # vim:set filetype=zsh:
-if let $# == 0
-then
-  # ssh-add -t6h ~/.ssh/id_rsa
-  echo would add 6h hours
-else
-  # ssh-add -t$1h ~/.ssh/id_rsa
-  echo would add $1h hours
-fi
-
-# Fish function
-# function keyadd --argument-names 'hours' --description "Add the key to the SSH agent for so many hours (default 6)"
-#   if test -n "$hours"
-#     ssh-add -t"$hours"h ~/.ssh/id_rsa
-#   else
-#     ssh-add -t6h ~/.ssh/id_rsa
-#   end
-# end
+hours=${1:=6}
+ssh-add -t${hours}h ~/.ssh/id_rsa
