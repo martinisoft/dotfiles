@@ -17,6 +17,8 @@ fi
 
 # Load custom functions ahead of everything else
 if test -d ~/.config/zsh/functions; then
-  fpath=(~/.config/zsh/functions $fpath)
-  autoload -U $fpath[1]/*(.:t)
+  if test -n $(ls -A ~/.config/zsh/functions); then
+    fpath=(~/.config/zsh/functions $fpath)
+    autoload -U $fpath[1]/*(:t)
+  fi
 fi
