@@ -15,13 +15,15 @@ if test -d ~/.cargo/bin; then
 fi
 
 # Homeshick Startup
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+if test -d ~/.homesick; then
+    source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+fi
 
 # Aliases
 alias vi='nvim'
 alias vim='nvim'
 
-alias gitclean='git branch --merged master | grep -v " master" | grep -v "\*" | xargs -n 1 git branch -d'
+alias gitclean='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 alias gc='git commit -v'
 alias gp='git push'
 alias gd='git diff'
