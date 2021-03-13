@@ -23,3 +23,12 @@ if test -d ~/.config/zsh/functions; then
     autoload -U $fpath[1]/*(:t)
   fi
 fi
+
+# Replace ctrl+r with McFly
+if type mcfly &>/dev/null; then
+  eval "$(mcfly init zsh)"
+  # Turn on Fuzzy Searching mode
+  export MCFLY_FUZZY=true
+  # Enable VIM key bindings
+  # export MCFLY_KEY_SCHEME=vim
+fi
