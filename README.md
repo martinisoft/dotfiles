@@ -6,6 +6,7 @@ These are my personal system configuration files for things like my shell, edito
 
 * [Homesick](https://github.com/technicalpickles/homesick) or [Homeshick](https://github.com/andsens/homeshick)
 * [Delta](https://github.com/dandavison/delta)
+* [McFly](https://github.com/cantino/mcfly)
 
 ## Environment
 
@@ -15,7 +16,7 @@ The configurations are slowly migrating over to be more agnostic between all sys
 
 ## Shell
 
-My primary shell is [Fish](https://fishshell.com/) but I also fall back to [Bash](https://www.gnu.org/software/bash/)
+My primary shell is [ZSH](https://www.zsh.org/) but I also fall back to [Bash](https://www.gnu.org/software/bash/)
 
 ## License and Author
 
