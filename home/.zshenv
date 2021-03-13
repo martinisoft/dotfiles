@@ -10,7 +10,9 @@ function is4 () {
 }
 
 # Configure Rust and friends
-export PATH="$HOME/.cargo/bin:$PATH"
+if test -d ~/.cargo/bin; then
+    export PATH="$HOME/.cargo/bin:$PATH"
+fi
 
 # Homeshick Startup
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
