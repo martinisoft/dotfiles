@@ -7,8 +7,9 @@ eval "$(direnv hook zsh)"
 # Starship for that sweet prompt
 eval "$(starship init zsh)"
 
-# Load Homebrew Completions
+# Load Homebrew Completions and add sbin to PATH
 if type brew &>/dev/null; then
+  export PATH="/usr/local/sbin:$PATH"
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
   autoload -Uz compinit
