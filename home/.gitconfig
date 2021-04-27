@@ -24,6 +24,7 @@
   pager = delta
   quotepath = false
   whitespace = warn
+  commentChar = ";"
 [delta]
   line-numbers = true
   minus-color = "#340001"
