@@ -60,14 +60,28 @@ Plug 'haishanh/night-owl.vim'
 Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-bundler'
 Plug 'WolfgangMehner/bash-support'
+Plug 'mileszs/ack.vim'
 
 " Initialize plugin system
 call plug#end()
 
 " Searching
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep --type-not sql --smart-case'
 endif
+
+" Any empty ack search will search for the work the cursor is on
+let g:ack_use_cword_for_empty_search = 1
+
+" Don't jump to first match
+cnoreabbrev Ack Ack!
+
+" Maps <leader>/ so we're ready to type the search keyword
+nnoremap <Leader>/ :Ack!<Space>
+
+" Navigate quickfix list with ease
+nnoremap <silent> [q :cprevious<CR>
+nnoremap <silent> ]q :cnext<CR>
 
 syntax on
 filetype plugin indent on
