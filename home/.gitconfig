@@ -27,8 +27,8 @@
   commentChar = ";"
 [delta]
   line-numbers = true
-  minus-color = "#340001"
-  plus-color = "#012800"
+  minus-style = "normal #340001"
+  plus-style = "syntax #012800"
   syntax-theme = Solarized (dark)
 [fetch]
   prune = true
