@@ -61,6 +61,9 @@ Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-bundler'
 Plug 'WolfgangMehner/bash-support'
 Plug 'mileszs/ack.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " Initialize plugin system
 call plug#end()
