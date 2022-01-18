@@ -23,7 +23,7 @@ fi
 alias vi='nvim'
 alias vim='nvim'
 
-alias gitclean='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+alias gitclean='git branch --merged | grep -v "\*" | grep -v "main" | xargs -n 1 git branch -d'
 alias gc='git commit -v'
 alias gp='git push'
 alias gd='git diff'
