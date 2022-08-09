@@ -5,6 +5,8 @@ These are my personal system configuration files for things like my shell, edito
 ## Requirements
 
 * [Homesick](https://github.com/technicalpickles/homesick) or [Homeshick](https://github.com/andsens/homeshick)
+* [starship](https://github.com/starship/starship)
+* [direnv](https://github.com/direnv/direnv)
 * [Delta](https://github.com/dandavison/delta)
 * [McFly](https://github.com/cantino/mcfly)
 
