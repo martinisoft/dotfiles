@@ -42,11 +42,8 @@ Plug 'dag/vim-fish'
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go'
 Plug 'nsf/gocode'
-Plug 'ncm2/ncm2'
-" ncm2 requires nvim-yarp
-Plug 'roxma/nvim-yarp'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-go', { 'do': 'make' }
+Plug 'Shougo/ddc.vim'
+Plug 'vim-denops/denops.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'hashivim/vim-terraform'
 Plug 'sheerun/vim-polyglot'
@@ -116,15 +113,6 @@ augroup vimrc
   autocmd!
   autocmd GuiEnter * set columns=120 lines=70 number
 augroup END
-
-" Use deoplete
-let g:deoplete#enable_at_startup = 1
-
-" enable ncm2 for all buffer
-autocmd BufEnter * call ncm2#enable_for_buffer()
-
-" note that must keep noinsert in completeopt, the others is optional
-set completeopt=noinsert,menuone,noselect
 
 " Ripgrep via Fzf. Search on mega steroids.
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
