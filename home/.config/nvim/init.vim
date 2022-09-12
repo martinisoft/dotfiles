@@ -61,6 +61,7 @@ Plug 'mileszs/ack.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'neovim/nvim-lspconfig'
 
 " Initialize plugin system
 call plug#end()
@@ -96,9 +97,9 @@ set splitbelow
 
 set hidden
 
-set guifont=Fira\ Code:h12
-" set guifont=Inconsolata-dz\ for\ Powerline:h16
-" set guioptions-=T guioptions-=e guioptions-=L guioptions-=r
+" Highlight matches.
+set hlsearch
+
 set shell=bash
 
 " pastetoggle (set paste/nopaste) if we aren't in NeoVim
@@ -125,6 +126,13 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " Remove netrw banner for now
 let g:netrw_banner = 0
+
+" Terraform LSP Setup
+lua <<EOF
+  require'lspconfig'.terraformls.setup{}
+EOF
+autocmd BufWritePre *.tfvars lua vim.lsp.buf.formatting_sync()
+autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()
 
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
