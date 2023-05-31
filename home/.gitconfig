@@ -46,6 +46,8 @@
 [interactive]
   diffFilter = delta --color-only
   singlekey = true
+[push]
+  autoSetupRemote = true
 [include]
   path = ~/.gitconfig.local
 [user]

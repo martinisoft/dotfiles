@@ -32,3 +32,6 @@ if type mcfly &>/dev/null; then
   # Enable VIM key bindings
   # export MCFLY_KEY_SCHEME=vim
 fi
+
+# Load in gh command
+source ~/.config/op/plugins.sh
