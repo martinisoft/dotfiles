@@ -8,9 +8,9 @@ eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
 
 # Load Homebrew Completions and add sbin to PATH
-if type brew &>/dev/null; then
-  export PATH="/usr/local/sbin:$PATH"
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
   autoload -Uz compinit
   compinit
@@ -32,6 +32,3 @@ if type mcfly &>/dev/null; then
   # Enable VIM key bindings
   # export MCFLY_KEY_SCHEME=vim
 fi
-
-# Load in gh command
-source ~/.config/op/plugins.sh
