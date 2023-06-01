@@ -1,15 +1,3 @@
-## ChefDK
-use_chefdk() {
-  eval "$(chef shell-init bash)"
-}
-
-## Ruby
-use_ruby() {
-  local ruby_dir=$HOME/.rubies/ruby-$1
-  load_prefix "$ruby_dir"
-  layout ruby
-}
-
 ## Rust
 use_rust() {
   source $HOME/.cargo/env
