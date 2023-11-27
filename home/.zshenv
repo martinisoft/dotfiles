@@ -9,11 +9,6 @@ function is4 () {
     return 1
 }
 
-# Add Homebrew to PATH if available
-if test -d /opt/homebrew/bin; then
-    export PATH="/opt/homebrew/bin:$PATH"
-fi
-
 # Configure Rust and friends
 if test -d ~/.cargo/bin; then
     export PATH="$HOME/.cargo/bin:$PATH"
