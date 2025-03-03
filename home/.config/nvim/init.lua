@@ -129,9 +129,6 @@ vim.cmd [[
   let g:netrw_banner = 0
 
   " Terraform LSP Setup
-  lua <<EOF
-    require'lspconfig'.terraformls.setup{}
-  EOF
   autocmd BufWritePre *.tfvars lua vim.lsp.buf.formatting_sync()
   autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()
 
@@ -146,3 +143,6 @@ vim.cmd [[
     endfor
   endif
 ]]
+
+-- Terraform LSP
+require'lspconfig'.terraformls.setup{}
